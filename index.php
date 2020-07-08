@@ -2,14 +2,18 @@
 
 	require_once("config.php");
 
-	$sql = new Sql();
+	#$sql = new Sql();
 
-	$usuarios = $sql->select("SELECT * FROM tb_usuarios");
+	#$usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
-	//echo json_encode($usuarios);
+	$root = new Usuario();
+	$root->loadbyId(3);
+
+	echo $root;
 
  ?>
 
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,17 +28,17 @@
 
 	<ul>
 	<?php 
-	while($lista = $usuarios->fetch(PDO::FETCH_ASSOC));
+	//while($lista = $usuarios->fetch(PDO::FETCH_ASSOC));
 	?>	
 
-		<li><?php echo $lista["idusuario"] . " - " . $lista["deslogin"] ?></li>
+		<li></li>
 
-	<?php endwhile; ?>	
+	<?php #endwhile; ?>	
 
 	</ul>
 
 
-<!--
+
 <div id="site">
  
 <div id="header"></div>
@@ -49,16 +53,4 @@
 <div id="footer"></div>
  
 </div>
--->
-
-</body>
-
-</html>
-
-
-<!--
-<div>idusuario</div>
-		<div>deslogin</div>
-		<div>dessenha</div>
-		<div>dtcadastro</div>
 -->
