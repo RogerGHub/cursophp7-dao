@@ -2,11 +2,7 @@
 
 	require_once("config.php");
 
-	#$sql = new Sql();
-
-	#$usuarios = $sql->select("SELECT * FROM tb_usuarios");
-
-	// Carreha um usuário
+	// Carrega um usuário
 	//$root = new Usuario();
 	//$root->loadbyId(3);
 	//echo $root;
@@ -20,9 +16,23 @@
 	//echo json_encode($search);
 
 	//Carrega um usuário usando o login e senha
+	//$usuario = new Usuario();
+	//$usuario->login("root", "123");
+	//echo $usuario;
+
+	// Criando um novo usuário
+	//$aluno = new Usuario("aluno", "@lun0"); // Intancio a classe passando usuario e senha p/ o método construtor
+	//$aluno->insert(); // Chamos o método para inserir o usuário e senha alimentado no construtor
+	//echo $aluno; // Exibo o resultado do INSERT que é um SELECT na procedure criada.
+
 	$usuario = new Usuario();
-	$usuario->login("root", "123");
+
+	$usuario->loadById(11);
+
+	$usuario->update("professor", "12345");
+
 	echo $usuario;
+
 
  ?>
 
