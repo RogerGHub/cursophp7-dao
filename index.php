@@ -25,14 +25,16 @@
 	//$aluno->insert(); // Chamos o método para inserir o usuário e senha alimentado no construtor
 	//echo $aluno; // Exibo o resultado do INSERT que é um SELECT na procedure criada.
 
-	$usuario = new Usuario();
+	// Atualizando um usuário pelo ID
+	//$usuario = new Usuario();
+	//$usuario->loadById(11);
+	//$usuario->update("professor", "12345");
+	//echo $usuario;
 
-	$usuario->loadById(11);
-
-	$usuario->update("professor", "12345");
-
+	// Excluindo um usuario pelo login e senha
+	$usuario = new Usuario("aluno","@lun0");
+	$usuario->delete();
 	echo $usuario;
-
 
  ?>
 
